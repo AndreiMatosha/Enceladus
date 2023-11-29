@@ -6,6 +6,9 @@ class Company(models.Model):
     name = models.CharField(max_length=50, unique=False, null=False, blank=False)
     country = models.CharField(max_length=50, unique=False, null=False, blank=False)
 
+    def __str__(self):
+        return self.name
+
 
 class Employee(models.Model):
     name = models.CharField(max_length=50, unique=False, null=False, blank=False)
@@ -14,6 +17,9 @@ class Employee(models.Model):
     email = models.EmailField(null=False, blank=False)
     job_position = models.CharField(max_length=50, unique=False, null=False, blank=False)
     employer = models.ForeignKey(Company, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.surname} {self.name}'
 
 
 

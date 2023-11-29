@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import dione.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('dione/', dione.views.list_employees, name='employees'),
+    path('dione/company', dione.views.CompanyList.as_view())
 ]
