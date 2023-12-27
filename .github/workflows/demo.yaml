@@ -2,7 +2,7 @@ name: Demo Workflow
 on: workflow_dispatch
 jobs:
   print:
-    runs-on: self-hosted
+    runs-on: jumphost
     steps:
       - name: Print to console
         run: echo Hello GH Actions!
